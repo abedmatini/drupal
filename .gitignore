@@ -24,6 +24,10 @@ drupal_site/vendor/
 # Ignore Drupal core directory.
 drupal_site/web/core/
 
+# Ignore contributed modules and themes.
+drupal_site/web/modules/contrib/
+drupal_site/web/themes/contrib/
+
 # Ignore Composer lock file if you don't want to commit it.
 #drupal_site/composer.lock
 
