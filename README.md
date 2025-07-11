@@ -39,3 +39,25 @@ either enable extension=gd
 or
 update to: extension=/usr/lib/php/20230831/gd.so
 
+
+
+# Setup Local Development Environtment
+
+add Twig.config to parameters on sites/develpment.service.yml
+<code>
+parameters:
+  http.response.debug_cacheability_headers: true
+  twig.config:
+    debug: true
+    auto_reload: true
+    cache: false
+</code>
+
+copy example.settings.local.php into default directory and rename it to settings.local.php
+
+Uncomment below code on settings.php
+<code>
+ if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
+   include $app_root . '/' . $site_path . '/settings.local.php';
+ }
+</code>
