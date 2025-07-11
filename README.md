@@ -1,4 +1,4 @@
-# drupal
+# Setup Drupal 11 on Codespaces
 
 run <code>sh setup.sh</code>.
 When it finishes run <code>cd drupal_site</code>
