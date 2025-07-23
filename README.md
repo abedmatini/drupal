@@ -61,3 +61,35 @@ Uncomment below code on settings.php
    include $app_root . '/' . $site_path . '/settings.local.php';
  }
 </code>
+
+
+# ddev solution to install locally Drupal 10
+<code>
+mkdir my-drupal-site && cd my-drupal-site
+ddev config --project-type=drupal10 --docroot=web
+ddev start
+ddev composer create-project "drupal/recommended-project:^10"
+ddev composer require drush/drush
+ddev drush site:install --account-name=admin --account-pass=admin -y
+ddev launch
+# or automatically log in with
+ddev launch $(ddev drush uli)
+</code>
+
+# ddev solution to install locally Drupal 11
+<code>
+mkdir my-drupal-site && cd my-drupal-site
+ddev config --project-type=drupal11 --docroot=web
+ddev start
+ddev composer create-project "drupal/recommended-project:^11"
+ddev composer require drush/drush
+ddev drush site:install --account-name=admin --account-pass=admin -y
+ddev launch
+# or automatically log in with
+ddev launch $(ddev drush uli)
+</code>
+
+# Reference for Ddev
+<code>
+https://ddev.readthedocs.io/en/stable/users/quickstart/
+</code>
